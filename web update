@@ -1,0 +1,24 @@
+#From: http://www.raspberry-pi-geek.com/Archive/2014/07/PHP-on-Raspberry-Pi
+#A php file was created in the Raspberry Pi3, in /var/www/html directoy
+
+01 <html>
+02 <head>
+03 <meta name="viewport" content="width=device-width" />
+04 <title>Trigger</title>
+05 </head>
+06         <body>
+07         Trigger switch:
+08         <form method="get" action="switch.php">
+09                 <input type="submit" value="Trigger" name="switch">
+10         </form>
+11         <?php
+12         $setmode17 = shell_exec("/usr/local/bin/gpio -g mode 17 out");
+13         if(isset($_GET['switch'])){
+14                 $gpio_off = shell_exec("/usr/local/bin/gpio -g write 17 1");
+15                 sleep (0.5);
+16                 $gpio_on = shell_exec("/usr/local/bin/gpio -g write 17 0");
+17                 echo "Done!";
+18         }
+19         ?>
+20         </body>
+21 </html>
