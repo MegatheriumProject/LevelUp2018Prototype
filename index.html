@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>LedTemp Device Client</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+    <script type="text/javascript" src="scripts/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="scripts/devicehive.js"></script>
+    <script type="text/javascript" src="scripts/application.js"></script>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var deviceHive = $.dhClient("http://playground.devicehive.com/api/rest", "eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjp7ImEiOlsyLDMsNCw1LDYsNyw4LDksMTAsMTEsMTIsMTUsMTYsMTddLCJlIjoxNTQ5NjgyMTQ2NjgwLCJ0IjowLCJ1IjoyNjc1LCJuIjpbIjI2NTAiXSwiZHQiOlsiKiJdfX0.hH94zAouUhnR-QfGZ60-pu5fFDVl2NaRLvQ-Uc4gC80");
+app.start(deviceHive, "raspi-led-thermo-f9c7348b");
+            app.start(deviceHive, "eyJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjp7ImEiOlsyLDMsNCw1LDYsNyw4LDksMTAsMTEsMTIsMTUsMTYsMTddLCJlIjoxNTQ5NjgyMTQ2NjgwLCJ0IjowLCJ1IjoyNjc1LCJuIjpbIjI2NTAiXSwiZHQiOlsiKiJdfX0.hH94zAouUhnR-QfGZ60-pu5fFDVl2NaRLvQ-Uc4gC80");
+        });
+     </script>
+</head>
+<body>
+    
+    <div class="container">
+    <div class="device-info-holder">
+        <h4>LedTemp Device information:</h4>
+        <table class="fields-table">
+            <tr>
+                <td class="title-column">Name:</td>
+                <td><span class="device-name"></span></td>
+            </tr>
+            <tr>
+                <td class="title-column">Status:</td>
+                <td><span class="device-status"></span></td>
+            </tr>
+            <tr>
+                <td class="title-column">Channel State:</td>
+                <td><span class="channel-state"></span></td>
+            </tr>
+            <tr>
+                <td class="title-column">Temperature:</td>
+                <td><span class="device-temperature"></span></td>
+            </tr>
+            <tr>
+                <td class="title-column">LED State:</td>
+                <td><div class="device-led-state"></div></td>
+            </tr>
+            <tr>
+                <td class="title-column">LED Control:</td>
+                <td>
+                    <a class="button send on" href="javascript:void(0)">On</a>
+                    <a class="button send off" href="javascript:void(0)">Off</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    </div>
+</body>
+</html>
